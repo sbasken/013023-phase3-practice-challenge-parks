@@ -21,10 +21,10 @@ class Visitor:
         return [ trip for trip in Trip.all if trip.visitor == self]
     
     def nationalparks(self):
-        return set([ trip.national_park for trip in self.trips() ])
+        return list(set([ trip.national_park for trip in self.trips() ]))
     ##I'm not passing the test for this one but when I test, it works.
 
     def create_trip(self, national_park, start_date, end_date):
-        Trip(self, national_park, start_date, end_date)
+        return Trip(self, national_park, start_date, end_date)
 
     
